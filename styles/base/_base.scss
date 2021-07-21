@@ -9,7 +9,7 @@
 }
 img {
   display: block;
-  max-width: 100;
+  max-width: 100%;
   height: auto;
 }
 
@@ -19,12 +19,14 @@ ul {
 
 a {
   text-decoration: none;
+  color: var(--clr-neutral-100);
 }
 
 body {
   font-family: var(--ff-family-open);
   font-size: 14px;
   background: var(--clr-primary-90);
+  color: var(--clr-neutral-100);
 }
 .wrapper {
   min-height: 100vh;
