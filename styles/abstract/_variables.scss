@@ -1,0 +1,8 @@
+@use './' as *;
+@use './color' as *;
+@use './fonts' as *;
+@use './space' as *;
+
+:root {
+  @include custom-variables($colors, $fonts, $spaces);
+}

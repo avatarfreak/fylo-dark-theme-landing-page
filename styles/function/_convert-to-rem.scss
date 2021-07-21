@@ -1,0 +1,21 @@
+@use "sass:math";
+@use "sass:meta";
+
+$base-font-size: 16px;
+//strip px or any other unit
+@function strip-unit($number) {
+  @if meta.type-of($number) == "number" and not unitless($number) {
+    @return math.div($number, ($number * 0 + 1));
+  }
+  @return $number;
+}
+
+//convert to rem
+@function to-rem($pixels: null) {
+  @return math.div(strip-unit($pixels), strip-unit($base-font-size)) * 1rem;
+}
+
+//convert to em
+@function to-em($pixels: null) {
+  @return math.div(strip-unit($pixels), strip-unit($base-font-size)) * 1em;
+}

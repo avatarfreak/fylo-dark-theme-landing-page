@@ -1,0 +1,42 @@
+//Primary
+$pri-90: hsl(219, 30%, 18%);
+$pri-100: hsl(218, 28%, 13%);
+$pri-110: hsl(217, 28%, 15%);
+$pri-120: hsl(216, 53%, 9%);
+
+//Accent
+$accent-100: hsl(0, 100%, 63%);
+$accent-110: hsl(176, 68%, 64%);
+$accent-120: hsl(198, 60%, 50%);
+
+//neutral
+$neutral-100: hsl(0, 0%, 100%);
+
+$colors: (
+  "primary": (
+    property: primary,
+    class: clr,
+    "values": (
+      "90": $pri-90,
+      "100": $pri-100,
+      "110": $pri-110,
+      "120": $pri-120,
+    ),
+  ),
+  "accent": (
+    property: accent,
+    class: clr,
+    "values": (
+      "100": $accent-100,
+      "110": $accent-110,
+      "120": $accent-120,
+    ),
+  ),
+  "neutral": (
+    property: neutral,
+    class: clr,
+    "values": (
+      "100": $neutral-100,
+    ),
+  ),
+);

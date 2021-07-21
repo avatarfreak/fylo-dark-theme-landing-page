@@ -1,0 +1,116 @@
+@use "sass:math";
+@use "sass:map";
+@use "sass:string";
+@use "../function" as *;
+
+//Background cover
+@mixin background-cover($pos: center) {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center $pos;
+}
+
+//background-overlay
+@mixin bg-img-overlay($path: null) {
+  @if $path != null {
+    background-image: url($path), linear-gradient(to bottom, transparent, hsla(0, 0%, 1%, 0.635));
+    background-blend-mode: multiply;
+  }
+}
+//gradient linear to right
+@mixin linear-gradient-right($start: #fff, $end: #fff) {
+  background-color: linear-gradient(to right, $start, $end);
+}
+
+//Custom-variables
+@mixin custom-variables($variables...) {
+  $class: map-merge-multiple($variables...);
+  $prefix: null;
+  @each $order, $family in $class {
+    @each $genus, $species in map.get($family, "values") {
+      @if (map.get($family, "property") == $prefix) {
+        --#{map.get($family, 'class')}-#{map.get($family, 'property')}-#{$genus}: #{$species};
+      } @else {
+        /*=======#{string.to-upper-case(map-get($family, 'property'))}=======*/
+
+        $prefix: map.get($family, "property");
+        --#{map.get($family, 'class')}-#{map.get($family, 'property')}-#{$genus}: #{$species};
+      }
+    }
+  }
+}
+
+//font-properties
+@mixin font-type-scale($size: 16, $typeface: null, $weight: normal, $space: null, $line: null) {
+  font-size: to-rem($size);
+  font-family: $typeface;
+  font-weight: $weight;
+  line-height: $line;
+  letter-spacing: $space;
+}
+
+//aspect ratio
+@mixin aspect-ratio($width, $height) {
+  padding-top: math.div($height, $width) * 100%;
+  height: 0;
+  max-height: $height;
+}
+
+//grid
+@mixin grid() {
+  display: grid;
+  @content;
+}
+
+//grid-column
+@mixin grid-column($col: 1, $size: 1fr, $space: space-between) {
+  display: grid;
+  grid-template-columns: repeat($col, $size);
+  justify-content: $space;
+  align-items: center;
+}
+
+//grid-center
+@mixin grid-column-center($col: 1, $size: 1fr) {
+  display: grid;
+  grid-template-columns: repeat($col, $size);
+  justify-content: center;
+  align-items: center;
+}
+
+//col-span
+@mixin col-span($start: 1, $end: 2) {
+  display: grid;
+  grid-column: $start / span $end;
+}
+//row span
+@mixin row-span($start: 1, $end: 2) {
+  display: grid;
+  grid-row: $start / span $end;
+}
+
+@mixin transition($prop: all, $duration: 0.3s) {
+  transition: $prop $duration ease-in-out;
+}
+//underline-transition
+@mixin underline-transition($col: #fff) {
+  & {
+    position: relative;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-bottom: 2px solid $col;
+    transform: scale(0);
+    transform-origin: (0, 0);
+    margin-top: 2rem;
+    visibility: hidden;
+
+    @include transition(transform);
+  }
+  &:hover:after {
+    visibility: visible;
+    transform: scale(1);
+  }
+}

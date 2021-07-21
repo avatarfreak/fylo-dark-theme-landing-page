@@ -1,0 +1,52 @@
+@use "../abstract" as *;
+@use "../function" as *;
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  display: block;
+  max-width: 100;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: var(--ff-family-open);
+  font-size: 14px;
+  background: var(--clr-primary-90);
+}
+.wrapper {
+  min-height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 1920px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--ff-family-raleway);
+}
+
+.attribution {
+  font-size: to-rem(11px);
+  text-align: center;
+  @include mq("md") {
+    font-size: to-rem(15px);
+  }
+}
+
+.attribution a {
+  color: var(--clr-accent-100);
+}

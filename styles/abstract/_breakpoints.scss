@@ -1,0 +1,39 @@
+@use "sass:map";
+@use "sass:string";
+
+//breakpoint
+$breakpoints: (
+  "xs": (
+    350px,
+  ),
+  "sm": (
+    375px,
+  ),
+  "md": (
+    768px,
+  ),
+  "lg": (
+    960px,
+  ),
+  "xl": (
+    1200px,
+  ),
+  "2xl": (
+    1400px,
+  ),
+  "3xl": (
+    1900px,
+  ),
+);
+
+@mixin mq($viewport) {
+  @if ($viewport == "xs") {
+    @media only screen and (max-width: map.get($breakpoints, $viewport )) {
+      @content;
+    }
+  } @else {
+    @media only screen and (min-width: map.get($breakpoints, $viewport )) {
+      @content;
+    }
+  }
+}
