@@ -1,6 +1,3 @@
 @use '../abstract/' as *;
 @use '../components/intro';
-
-main {
-  margin: var(--s-space-4);
-}
+@use '../components/features';
