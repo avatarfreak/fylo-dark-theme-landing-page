@@ -1,0 +1,47 @@
+@use "../abstract" as *;
+
+/* ------------------INTRO SECTION --------------*/
+
+.intro {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: 32vh;
+    background: url("../images/bg-curvy-mobile.svg");
+    @include background-cover();
+    @include aspect-ratio(375px, 141px);
+    z-index: -1;
+  }
+  &__wrapper {
+    margin: var(--s-space-4);
+    & img {
+      display: inline-block;
+    }
+  }
+
+  &__title {
+    @include font-type-scale(
+      var(--fs-size-xl),
+      var(--ff-family-raleway),
+      var(--fw-weight-bold),
+      null,
+      var(--l-leading-normal)
+    );
+    padding: var(--s-space-2) 0;
+  }
+
+  &__text {
+    @include font-type-scale(var(--fs-size-sm), null, null, null, var(--l-leading-normal));
+    padding: var(--s-space-2) 0;
+  }
+
+  &__btn {
+    padding: var(--s-space-2) var(--s-space-5);
+  }
+}
