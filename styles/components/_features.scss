@@ -1,0 +1,35 @@
+@use "../abstract" as *;
+
+/*---------- Features ----------*/
+
+.features {
+  img {
+    display: inline-block;
+  }
+
+  &__wrapper {
+    margin: var(--s-space-6) var(--s-space-4);
+  }
+
+  &-card {
+    padding: var(--s-space-6) 0;
+    &__img {
+      padding-bottom: var(--s-space-2);
+    }
+    &__title {
+      @include font-type-scale(
+        var(--fs-size-lg),
+        var(--ff-family-raleway),
+        var(--fw-weight-bold),
+        null,
+        var(--l-leading-normal)
+      );
+      padding: var(--s-space-2) 0;
+    }
+
+    &__text {
+      @include font-type-scale(var(--fs-size-sm), null, null, null, var(--l-leading-normal));
+      padding: var(--s-space-1) 0;
+    }
+  }
+}
