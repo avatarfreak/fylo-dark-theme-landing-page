@@ -1,22 +1,10 @@
+@use '../function' as *;
 @use '../abstract' as *;
 
-.outline-black {
-  @include fonts-props(15px, var(--ff-fly-Alata), var(--fw-wgt-regular));
-  outline: 2px solid var(--clr-primary-dark-gray);
-  color: var(--clr-primary-black);
-  letter-spacing: var(--s-space-1);
-  display: inline-block;
-  cursor: pointer;
-  padding: var(--s-space-2) var(--s-space-5);
-  text-transform: uppercase;
-  @include transition();
-  @include mq("xl") {
-    padding: var(--s-space-3) var(--s-space-5);
-  }
-
-  &:hover {
-    color: var(--clr-primary-white);
-    background-color: var(--clr-primary-black);
-    outline: 2px solid var(--clr-primary-black);
-  }
+.intro__link {
+  display: block;
+  background-image: linear-gradient(to right, var(--clr-accent-110), var(--clr-accent-120));
+  border-radius: var(--s-space-3);
+  padding: var(--s-space-1);
+  @include font-type-scale(var(--fs-size-sm), var(--fs-family-raleway), var(--fw-weight-bold));
 }
