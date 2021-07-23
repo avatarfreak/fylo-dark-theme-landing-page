@@ -4,7 +4,7 @@
 .intro__link {
   display: block;
   background-image: linear-gradient(to right, var(--clr-accent-110), var(--clr-accent-120));
-  border-radius: var(--s-space-3);
-  padding: var(--s-space-1);
+  border-radius: var(--s-space-4);
+  padding: var(--s-space-2);
   @include font-type-scale(var(--fs-size-sm), var(--fs-family-raleway), var(--fw-weight-bold));
 }
