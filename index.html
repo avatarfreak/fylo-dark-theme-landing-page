@@ -157,8 +157,8 @@
             <div class="testimonials__details">
               <img src="./images/profile-1.jpg" alt="profile image of founder and ceo" class="testimonials__img" />
               <figcaption>
-                <h4 class="testimonials__author">Satish Patel</h4>
-                <p class="testimonials__company">Founder & CEO, Huddle</p>
+                <cite class="testimonials__author">Satish Patel</cite>
+                <cite class="testimonials__company">Founder & CEO, Huddle</cite>
               </figcaption>
             </div>
           </figure>
@@ -173,8 +173,8 @@
             <div class="testimonials__details">
               <img src="./images/profile-2.jpg" alt="profile image of founder and ceo" class="testimonials__img" />
               <figcaption>
-                <h4 class="testimonials__author">Bruce McKenzie</h4>
-                <p class="testimonials__company">Founder & CEO, Huddle</p>
+                <cite class="testimonials__author">Bruce McKenzie</cite>
+                <cite class="testimonials__company">Founder & CEO, Huddle</cite>
               </figcaption>
             </div>
           </figure>
@@ -189,8 +189,8 @@
             <div class="testimonials__details">
               <img src="./images/profile-3.jpg" alt="profile image of founder and ceo" class="testimonials__img" />
               <figcaption>
-                <h4 class="testimonials__author">Iva Boyd</h4>
-                <p class="testimonials__company">Founder & CEO, Huddle</p>
+                <cite class="testimonials__author">Iva Boyd</cite>
+                <cite class="testimonials__company">Founder & CEO, Huddle</cite>
               </figcaption>
             </div>
           </figure>
@@ -206,9 +206,10 @@
             questions, our support team would be happy to help you.
           </p>
           <!-- Sign Up Form -->
-          <form action="#!" class="cta__form">
-            <input type="email" class="cta__form__email" placeholder="email@example" name="email">
-            <button class="cta__form__btn pill-btn"> Get Started For Free </button>
+          <form action="#!" autocomplete="off" class="cta__form" novalidate>
+            <input type="email" class="cta__form__email" placeholder="email@example.com" name="email">
+            <span class="error"></span>
+            <button class="cta__form__btn pill-btn" type="submit"> Get Started For Free </button>
           </form>
         </div>
       </section>

@@ -30,6 +30,9 @@ body {
   color: var(--clr-neutral-100);
   margin: 0 auto;
 }
+.error {
+  color: var(--clr-accent-100);
+}
 .wrapper {
   min-height: 100vh;
   margin: 0 auto;

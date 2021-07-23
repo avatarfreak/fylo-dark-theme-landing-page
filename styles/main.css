@@ -41,6 +41,8 @@
   --s-space-6: 3rem;
   --s-space-7: 3.5rem;
   --s-space-8: 4rem;
+  --s-space-9: 4.5rem;
+  --s-space-10: 5rem;
 }
 
 .pill-btn {
@@ -84,6 +86,10 @@ body {
   background: var(--clr-primary-90);
   color: var(--clr-neutral-100);
   margin: 0 auto;
+}
+
+.error {
+  color: var(--clr-accent-100);
 }
 
 .wrapper {
@@ -372,6 +378,9 @@ h3 {
   flex-direction: column;
   justify-content: space-evenly;
 }
+.testimonials figcaption cite {
+  font-style: normal;
+}
 .testimonials__author {
   font-size: var(--fs-size-xs);
   font-family: var(--ff-family-open);
@@ -456,6 +465,7 @@ main {
   margin-right: var(--s-space-4);
 }
 .footer__address {
+  font-style: normal;
   padding: var(--s-space-2) 0;
 }
 .footer__address > * + * {
@@ -483,8 +493,9 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: var(--s-space-8);
-  gap: var(--s-space-1);
+  margin-top: var(--s-space-10);
+  margin-bottom: var(--s-space-4);
+  gap: var(--s-space-2);
 }
 .footer__social__link {
   display: flex;

@@ -56,6 +56,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+
+    cite {
+      font-style: normal;
+    }
   }
   &__author {
     @include font-type-scale(var(--fs-size-xs), var(--ff-family-open), var(--fw-weight-bold), 1px);
