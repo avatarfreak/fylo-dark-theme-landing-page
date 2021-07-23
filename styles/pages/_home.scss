@@ -1,3 +1,7 @@
 @use '../abstract/' as *;
 @use '../components/intro';
 @use '../components/features';
+@use '../components/productive';
+main {
+  background: var(--clr-primary-100);
+}
