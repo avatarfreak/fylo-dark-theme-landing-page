@@ -2,6 +2,8 @@
 @use '../components/intro';
 @use '../components/features';
 @use '../components/productive';
+@use '../components/testimonials';
+
 main {
   background: var(--clr-primary-100);
 }

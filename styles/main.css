@@ -206,7 +206,7 @@ h3 {
 /* ------------------INTRO SECTION --------------*/
 .intro {
   position: relative;
-  background-image: linear-gradient(180deg, var(--clr-primary-90) 44%, var(--clr-primary-100) 44%);
+  background-image: linear-gradient(180deg, var(--clr-primary-90) 44%, var(--clr-primary-100) 48%);
   --s-space-10: 10rem;
 }
 .intro__wrapper {
@@ -218,7 +218,7 @@ h3 {
   display: inline-block;
 }
 .intro__title {
-  font-size: var(--fs-size-xl);
+  font-size: var(--fs-size-lg);
   font-family: var(--ff-family-raleway);
   font-weight: var(--fw-weight-bold);
   line-height: var(--l-leading-normal);
@@ -282,7 +282,7 @@ h3 {
   display: inline-block;
 }
 .productive__wrapper {
-  margin: var(--s-space-6) var(--s-space-4);
+  margin: var(--s-space-8) var(--s-space-4);
 }
 .productive__title {
   font-size: var(--fs-size-xl);
@@ -320,6 +320,66 @@ h3 {
   margin-top: var(--s-space-4);
   width: 100%;
   border-bottom: 2px solid var(--clr-accent-110);
+}
+
+/*--------------------Testimonials Section------------------*/
+.testimonials {
+  --mt-10: 10rem;
+  position: relative;
+  margin: var(--mt-10) var(--s-space-5);
+}
+.testimonials::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: calc(var(--fs-size-xl) * -1);
+  background: url("../images/bg-quotes.png");
+  background-repeat: no-repeat;
+  background-size: var(--s-space-3);
+  height: var(--s-space-3);
+  width: var(--s-space-3);
+}
+.testimonials__figure {
+  border-radius: var(--s-space-1);
+  background-color: var(--clr-primary-90);
+  margin: var(--s-space-5) 0;
+  text-align: left;
+  padding: var(--s-space-3);
+}
+.testimonials__text {
+  font-size: var(--fs-size-xs);
+  font-family: var(--ff-family-open);
+  font-weight: var(--fw-weight-normal);
+  line-height: var(--l-leading-normal);
+  padding-bottom: var(--s-space-3);
+}
+.testimonials__details {
+  display: inline-flex;
+}
+.testimonials img {
+  display: inline-block;
+  border-radius: 50%;
+  width: 3.125rem;
+  height: 3.125rem;
+}
+.testimonials figcaption {
+  margin-left: var(--s-space-2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.testimonials__author {
+  font-size: var(--fs-size-xs);
+  font-family: var(--ff-family-open);
+  font-weight: var(--fw-weight-bold);
+  letter-spacing: 1px;
+}
+.testimonials__company {
+  font-size: var(--fs-size-2xs);
+  font-family: var(--ff-family-raleway);
+  font-weight: var(--fw-weight-normal);
+  letter-spacing: 1px;
 }
 
 main {

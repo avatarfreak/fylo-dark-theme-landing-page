@@ -1,0 +1,71 @@
+@use "../abstract" as *;
+@use "../function" as *;
+
+/*--------------------Testimonials Section------------------*/
+
+.testimonials {
+  --mt-10: 10rem;
+
+  position: relative;
+  margin: var(--mt-10) var(--s-space-5);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: calc(var(--fs-size-xl) * -1);
+    background: url("../images/bg-quotes.png");
+    background-repeat: no-repeat;
+    background-size: var(--s-space-3);
+    height: var(--s-space-3);
+    width: var(--s-space-3);
+  }
+
+  &__figure {
+    border-radius: var(--s-space-1);
+    background-color: var(--clr-primary-90);
+    margin: var(--s-space-5) 0;
+    text-align: left;
+    padding: var(--s-space-3);
+  }
+
+  &__text {
+    @include font-type-scale(
+      var(--fs-size-xs),
+      var(--ff-family-open),
+      var(--fw-weight-normal),
+      null,
+      var(--l-leading-normal)
+    );
+    padding-bottom: var(--s-space-3);
+  }
+
+  &__details {
+    display: inline-flex;
+  }
+
+  & img {
+    display: inline-block;
+    border-radius: 50%;
+    width: to-rem(50px);
+    height: to-rem(50px);
+  }
+  & figcaption {
+    margin-left: var(--s-space-2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  &__author {
+    @include font-type-scale(var(--fs-size-xs), var(--ff-family-open), var(--fw-weight-bold), 1px);
+  }
+  &__company {
+    @include font-type-scale(
+      var(--fs-size-2xs),
+      var(--ff-family-raleway),
+      var(--fw-weight-normal),
+      1px
+    );
+  }
+}
