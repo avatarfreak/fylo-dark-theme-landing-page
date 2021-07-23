@@ -2,6 +2,7 @@
 
 /**------------SIGN UP--------------------*/
 .cta {
+  background-image: linear-gradient(180deg, var(--clr-primary-100) 45%, var(--clr-primary-120) 45%);
   &__wrapper {
     margin: 0 var(--s-space-3);
     background: var(--clr-primary-110);

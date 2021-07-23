@@ -83,6 +83,7 @@ body {
   font-size: 14px;
   background: var(--clr-primary-90);
   color: var(--clr-neutral-100);
+  margin: 0 auto;
 }
 
 .wrapper {
@@ -385,6 +386,9 @@ h3 {
 }
 
 /**------------SIGN UP--------------------*/
+.cta {
+  background-image: linear-gradient(180deg, var(--clr-primary-100) 45%, var(--clr-primary-120) 45%);
+}
 .cta__wrapper {
   margin: 0 var(--s-space-3);
   background: var(--clr-primary-110);
@@ -420,5 +424,76 @@ main {
 }
 
 /* - - - - - - - - footer- - - - - - - - -*/
+.footer {
+  --mt-top: 10rem;
+  background: var(--clr-primary-120);
+  padding-top: var(--mt-top);
+}
+.footer img {
+  display: inline-block;
+}
+.footer__wrapper {
+  margin: 0 var(--s-space-3);
+}
+.footer__title {
+  width: 9rem;
+}
+.footer__body {
+  text-align: left;
+  padding: var(--s-space-4) 0;
+}
+.footer__location {
+  display: flex;
+  align-items: flex-start;
+  font-size: var(--fs-size-sm);
+  font-weight: var(--fw-weight-normal);
+  line-height: var(--l-leading-normal);
+}
+.footer__location img {
+  margin-top: calc(var(--s-space-1) / 2);
+}
+.footer__location > * {
+  margin-right: var(--s-space-4);
+}
+.footer__address {
+  padding: var(--s-space-2) 0;
+}
+.footer__address > * + * {
+  display: flex;
+  align-items: center;
+  padding: var(--s-space-2) 0;
+}
+.footer__address > a span {
+  margin-left: var(--s-space-3);
+}
+.footer__secondary-nav, .footer__information {
+  margin-top: var(--s-space-3);
+}
+.footer__secondary-nav li, .footer__information li {
+  font-size: var(--fs-size-sm);
+  font-weight: var(--fw-weight-normal);
+  line-height: var(--l-leading-normal);
+  padding: var(--s-space-1) 0;
+}
+.footer .icon {
+  fill: var(--clr-neutral-100);
+  width: var(--fs-size-xl);
+}
+.footer__social__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--s-space-8);
+  gap: var(--s-space-1);
+}
+.footer__social__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--s-space-5);
+  width: var(--s-space-5);
+  border: 2px solid var(--clr-neutral-100);
+  border-radius: 50%;
+}
 
 /*# sourceMappingURL=main.css.map */
