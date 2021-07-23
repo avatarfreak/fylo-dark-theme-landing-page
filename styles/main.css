@@ -43,11 +43,13 @@
   --s-space-8: 4rem;
 }
 
-.intro__link {
+.pill-btn {
   display: block;
   background-image: linear-gradient(to right, var(--clr-accent-110), var(--clr-accent-120));
   border-radius: var(--s-space-4);
   padding: var(--s-space-2);
+  width: 100%;
+  border: 0;
   font-size: var(--fs-size-sm);
   font-family: var(--fs-family-raleway);
   font-weight: var(--fw-weight-bold);
@@ -117,7 +119,7 @@ h3 {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  padding: var(--s-space-4);
+  padding: var(--s-space-3);
 }
 .navbar__logo {
   width: 6rem;
@@ -212,7 +214,7 @@ h3 {
 .intro__wrapper {
   position: relative;
   z-index: 1;
-  margin: var(--s-space-4);
+  margin: var(--s-space-3);
 }
 .intro__wrapper img {
   display: inline-block;
@@ -253,7 +255,7 @@ h3 {
   display: inline-block;
 }
 .features__wrapper {
-  margin: var(--s-space-6) var(--s-space-4);
+  margin: var(--s-space-6) var(--s-space-3);
 }
 .features-card {
   padding: var(--s-space-6) 0;
@@ -282,7 +284,7 @@ h3 {
   display: inline-block;
 }
 .productive__wrapper {
-  margin: var(--s-space-8) var(--s-space-4);
+  margin: var(--s-space-8) var(--s-space-3);
 }
 .productive__title {
   font-size: var(--fs-size-xl);
@@ -326,7 +328,7 @@ h3 {
 .testimonials {
   --mt-10: 10rem;
   position: relative;
-  margin: var(--mt-10) var(--s-space-5);
+  margin: var(--mt-10) var(--s-space-4);
 }
 .testimonials::before {
   content: "";
@@ -380,6 +382,37 @@ h3 {
   font-family: var(--ff-family-raleway);
   font-weight: var(--fw-weight-normal);
   letter-spacing: 1px;
+}
+
+/**------------SIGN UP--------------------*/
+.cta__wrapper {
+  margin: 0 var(--s-space-3);
+  background: var(--clr-primary-110);
+  padding: var(--s-space-3);
+  border-radius: var(--s-space-2);
+}
+.cta__title {
+  font-size: var(--fs-size-md);
+  font-family: var(--ff-family-raleway);
+  font-weight: var(--fw-weight-bold);
+  line-height: var(--l-leading-normal);
+}
+.cta__text {
+  font-size: var(--fs-size-xs);
+  font-family: var(--ff-family-open);
+  font-weight: var(--fw-weight-normal);
+  line-height: var(--l-leading-normal);
+  padding: var(--s-space-3) 0;
+}
+.cta__form__email {
+  border-radius: var(--s-space-4);
+  padding: var(--s-space-2);
+  border: none;
+  width: 100%;
+}
+.cta__form__btn {
+  color: var(--clr-neutral-100);
+  margin: var(--s-space-3) 0;
 }
 
 main {
