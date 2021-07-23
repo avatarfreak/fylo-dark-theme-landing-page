@@ -8,7 +8,7 @@
     display: inline-block;
   }
   &__wrapper {
-    margin: var(--s-space-8) var(--s-space-4);
+    margin: var(--s-space-8) var(--s-space-3);
   }
   &__title {
     @include font-type-scale(
