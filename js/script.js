@@ -6,6 +6,7 @@ menuBtn.addEventListener("click", () => {
   menu.classList.toggle("active");
   menuToggleBtn.classList.toggle("active");
 });
+
 //Email validation
 const errorPlaceholder = document.querySelector(".error");
 const form = document.querySelector(".cta__form");
@@ -27,6 +28,7 @@ const validateEmail = (email) => {
   return email.match(validReg) ? true : false;
 };
 
+//submit form
 form.addEventListener("submit", (evt) => {
   evt.preventDefault();
   const email = evt.target.children[0].value;

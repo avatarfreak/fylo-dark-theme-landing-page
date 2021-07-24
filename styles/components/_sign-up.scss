@@ -8,6 +8,10 @@
     background: var(--clr-primary-110);
     padding: var(--s-space-3);
     border-radius: var(--s-space-2);
+
+    @include mq("sm") {
+      margin: 0 var(--s-space-4);
+    }
   }
 
   &__title {

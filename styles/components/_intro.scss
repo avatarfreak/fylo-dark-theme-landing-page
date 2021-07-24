@@ -3,12 +3,30 @@
 /* ------------------INTRO SECTION --------------*/
 
 .intro {
+  --first-length: 44%;
+  --second-length: 48%;
+
+  @include mq("sm") {
+    --first-length: 50%;
+    --second-length: 58%;
+  }
+
   position: relative;
-  background-image: linear-gradient(180deg, var(--clr-primary-90) 44%, var(--clr-primary-100) 48%);
+  background-image: linear-gradient(
+    180deg,
+    var(--clr-primary-90) var(--first-length),
+    var(--clr-primary-100) var(--second-length)
+  );
+
   &__wrapper {
     position: relative;
     z-index: 1;
     margin: var(--s-space-3);
+
+    @include mq("sm") {
+      margin: var(--s-space-4);
+    }
+
     & img {
       display: inline-block;
     }
@@ -34,7 +52,11 @@
     padding: var(--s-space-2) var(--s-space-5);
   }
 
-  --s-space-10: 10rem;
+  --mt-margin-top: 10rem;
+
+  @include mq("sm") {
+    --mt-margin-top: 12rem;
+  }
 
   &::after {
     content: "";
@@ -42,7 +64,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    margin-top: var(--s-space-10);
+    margin-top: var(--mt-margin-top);
     background-image: url("../images/bg-curvy-mobile.svg");
     @include aspect-ratio(375px, 141px);
     @include background-cover();

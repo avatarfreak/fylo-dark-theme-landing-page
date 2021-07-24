@@ -4,10 +4,14 @@
 /*--------------------Testimonials Section------------------*/
 
 .testimonials {
-  --mt-10: 10rem;
+  --mt-margin-top: 10rem;
 
   position: relative;
-  margin: var(--mt-10) var(--s-space-4);
+  margin: var(--mt-margin-top) var(--s-space-4);
+
+  @include mq("sm") {
+    margin: var(--mt-margin-top) var(--s-space-5);
+  }
 
   &::before {
     content: "";

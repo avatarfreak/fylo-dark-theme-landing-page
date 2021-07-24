@@ -9,6 +9,10 @@
   }
   &__wrapper {
     margin: var(--s-space-8) var(--s-space-3);
+
+    @include mq("sm") {
+      margin: var(--s-space-8) var(--s-space-4);
+    }
   }
   &__title {
     @include font-type-scale(
@@ -48,7 +52,12 @@
       left: 0;
       margin-top: var(--s-space-4);
       width: 100%;
-      border-bottom: 2px solid var(--clr-accent-110);
+      border-bottom: 2px solid;
+      border-color: var(--clr-accent-110);
+      @include transition(transform, 0.8s);
+    }
+    &__link:hover::after {
+      transform: scale(0.2);
     }
   }
 }

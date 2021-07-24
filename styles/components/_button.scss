@@ -9,4 +9,18 @@
   width: 100%;
   border: 0;
   @include font-type-scale(var(--fs-size-sm), var(--fs-family-raleway), var(--fw-weight-bold));
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  background-position: center;
+  transition: background 0.8s;
+
+  &:hover {
+    background: radial-gradient(circle, rgba(4, 227, 243, 0.897) 1%, var(--clr-accent-110) 1%)
+      center / 15000%;
+  }
+  &:active {
+    background-size: 100%;
+    transition: background 0s;
+  }
 }

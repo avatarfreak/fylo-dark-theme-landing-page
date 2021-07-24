@@ -13,6 +13,10 @@
 
   &__wrapper {
     margin: 0 var(--s-space-3);
+
+    @include mq("sm") {
+      margin: 0 var(--s-space-4);
+    }
   }
 
   &__title {
@@ -73,6 +77,7 @@
   & .icon {
     fill: var(--clr-neutral-100);
     width: var(--fs-size-xl);
+    @include transition(fill);
   }
   &__social__list {
     display: flex;
@@ -89,7 +94,16 @@
     justify-content: center;
     height: var(--s-space-5);
     width: var(--s-space-5);
-    border: 2px solid var(--clr-neutral-100);
+    border: 2px solid;
+    border-color: var(--clr-neutral-100);
     border-radius: 50%;
+    @include transition(border-color);
+
+    &:hover {
+      border-color: var(--clr-accent-110);
+      .icon {
+        fill: var(--clr-accent-110);
+      }
+    }
   }
 }
