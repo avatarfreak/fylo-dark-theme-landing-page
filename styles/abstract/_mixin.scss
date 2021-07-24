@@ -110,12 +110,10 @@
     transform: scale(0);
     transform-origin: (0, 0);
     margin-top: 2rem;
-    visibility: hidden;
 
     @include transition(transform);
   }
   &:hover:after {
-    visibility: visible;
     transform: scale(1);
   }
 }

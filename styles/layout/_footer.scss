@@ -21,6 +21,10 @@
 
   &__title {
     width: 9rem;
+
+    @include mq("md") {
+      width: 10rem;
+    }
   }
 
   &__body {
@@ -39,8 +43,16 @@
       var(--l-leading-normal)
     );
 
+    @include mq("md") {
+      font-size: var(--fs-size-lg);
+    }
+
     & img {
       margin-top: calc(var(--s-space-1) / 2);
+
+      @include mq("md") {
+        margin-top: var(--s-space-1);
+      }
     }
     & > * {
       margin-right: var(--s-space-4);
@@ -57,12 +69,21 @@
     }
     & > a span {
       margin-left: var(--s-space-3);
+
+      @include mq("md") {
+        font-size: var(--fs-size-md);
+      }
     }
   }
 
   &__secondary-nav,
   &__information {
     margin-top: var(--s-space-3);
+
+    @include mq("md") {
+      margin-top: var(--s-space-4);
+    }
+
     li {
       @include font-type-scale(
         var(--fs-size-sm),
@@ -72,6 +93,10 @@
         var(--l-leading-normal)
       );
       padding: var(--s-space-1) 0;
+
+      @include mq("md") {
+        font-size: var(--fs-size-lg);
+      }
     }
   }
   & .icon {
@@ -79,6 +104,7 @@
     width: var(--fs-size-xl);
     @include transition(fill);
   }
+
   &__social__list {
     display: flex;
     align-items: center;

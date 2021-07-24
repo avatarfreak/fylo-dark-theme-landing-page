@@ -11,6 +11,10 @@
     --second-length: 58%;
   }
 
+  @include mq("md") {
+    --first-length: 60%;
+    --second-length: 80%;
+  }
   position: relative;
   background-image: linear-gradient(
     180deg,
@@ -41,21 +45,37 @@
       var(--l-leading-normal)
     );
     padding: var(--s-space-2) 0;
+
+    @include mq("md") {
+      font-size: var(--fs-size-xl);
+    }
   }
 
   &__text {
     @include font-type-scale(var(--fs-size-sm), null, null, null, var(--l-leading-normal));
     padding: var(--s-space-2) 0;
+
+    @include mq("md") {
+      font-size: var(--fs-size-lg);
+    }
   }
 
   &__btn {
     padding: var(--s-space-2) var(--s-space-5);
+
+    @include mq("md") {
+      padding: var(--s-space-2) 8rem;
+    }
   }
 
   --mt-margin-top: 10rem;
 
   @include mq("sm") {
     --mt-margin-top: 12rem;
+  }
+
+  @include mq("sm") {
+    --mt-margin-top: 20rem;
   }
 
   &::after {

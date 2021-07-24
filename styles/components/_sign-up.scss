@@ -22,6 +22,9 @@
       null,
       var(--l-leading-normal)
     );
+    @include mq("md") {
+      font-size: var(--fs-size-xl);
+    }
   }
 
   &__text {
@@ -33,6 +36,9 @@
       var(--l-leading-normal)
     );
     padding: var(--s-space-3) 0;
+    @include mq("md") {
+      font-size: var(--fs-size-lg);
+    }
   }
 
   &__form {
@@ -41,11 +47,31 @@
       padding: var(--s-space-2);
       border: none;
       width: 100%;
+
+      @include mq("md") {
+        text-indent: 2rem;
+        width: 80%;
+      }
+    }
+
+    & .error {
+      display: block;
+      color: var(--clr-accent-100);
+
+      @include mq("md") {
+        font-size: var(--fs-size-md);
+      }
     }
 
     &__btn {
       color: var(--clr-neutral-100);
       margin: var(--s-space-3) 0;
+
+      @include mq("md") {
+        display: inline-block;
+        width: 80%;
+        font-size: var(--fs-size-lg);
+      }
     }
   }
 }

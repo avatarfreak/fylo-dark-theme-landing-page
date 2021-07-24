@@ -29,11 +29,19 @@
         var(--l-leading-normal)
       );
       padding: var(--s-space-2) 0;
+
+      @include mq("md") {
+        font-size: var(--fs-size-xl);
+      }
     }
 
     &__text {
       @include font-type-scale(var(--fs-size-sm), null, null, null, var(--l-leading-normal));
       padding: var(--s-space-1) 0;
+
+      @include mq("md") {
+        font-size: var(--fs-size-lg);
+      }
     }
   }
 }

@@ -43,6 +43,10 @@
       var(--l-leading-normal)
     );
     padding-bottom: var(--s-space-3);
+
+    @include mq("md") {
+      font-size: var(--fs-size-sm);
+    }
   }
 
   &__details {
@@ -67,6 +71,10 @@
   }
   &__author {
     @include font-type-scale(var(--fs-size-xs), var(--ff-family-open), var(--fw-weight-bold), 1px);
+
+    @include mq("md") {
+      font-size: var(--fs-size-sm);
+    }
   }
   &__company {
     @include font-type-scale(
@@ -75,5 +83,8 @@
       var(--fw-weight-normal),
       1px
     );
+    @include mq("md") {
+      font-size: var(--fs-size-xs);
+    }
   }
 }

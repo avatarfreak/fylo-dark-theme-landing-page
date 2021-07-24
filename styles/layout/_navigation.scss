@@ -18,6 +18,10 @@
     width: 6rem;
     display: inline-block;
     z-index: 3;
+
+    @include mq("md") {
+      width: 8rem;
+    }
   }
 
   &__menu {
@@ -72,6 +76,9 @@
         }
       }
     }
+    @include mq("md") {
+      display: none;
+    }
   }
 
   &__nav {
@@ -94,15 +101,30 @@
       &.active {
         transform: translateX(0%);
       }
+
+      @include mq("md") {
+        position: static;
+        transform: unset;
+        right: 0;
+        flex-direction: row;
+        background: none;
+        align-items: center;
+        height: auto;
+        justify-content: flex-end;
+        padding: 0;
+      }
     }
     &__item {
       padding: var(--s-space-3);
+
+      @include mq("md") {
+        padding: 0;
+        margin-left: var(--s-space-3);
+      }
     }
     &__link {
       @include font-type-scale(20px, var(--ff-family-raleway), var(--fw-weight-normal));
-      &:hover {
-        border-bottom: 2px solid var(--clr-accent-110);
-      }
+      @include underline-transition(var(--clr-accent-110));
     }
   }
 }
