@@ -13,6 +13,10 @@
     @include mq("sm") {
       margin: var(--s-space-6) var(--s-space-4);
     }
+
+    @include mq("768px") {
+      margin: var(--s-space-7);
+    }
   }
 
   &-card {
@@ -32,6 +36,9 @@
 
       @include mq("md") {
         font-size: var(--fs-size-xl);
+      }
+      @include mq("768px") {
+        font-size: var(--fs-size-2xl);
       }
     }
 

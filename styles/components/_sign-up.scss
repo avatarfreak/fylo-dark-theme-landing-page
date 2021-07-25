@@ -12,6 +12,10 @@
     @include mq("sm") {
       margin: 0 var(--s-space-4);
     }
+
+    @include mq("768px") {
+      margin: 0 var(--s-space-7);
+    }
   }
 
   &__title {
@@ -24,6 +28,10 @@
     );
     @include mq("md") {
       font-size: var(--fs-size-xl);
+    }
+
+    @include mq("768px") {
+      font-size: var(--fs-size-3xl);
     }
   }
 
@@ -39,6 +47,10 @@
     @include mq("md") {
       font-size: var(--fs-size-lg);
     }
+
+    @include mq("768px") {
+      padding: var(--s-space-4) 0;
+    }
   }
 
   &__form {
@@ -50,7 +62,7 @@
 
       @include mq("md") {
         text-indent: 2rem;
-        width: 80%;
+        max-width: calc(100% - 10rem);
       }
     }
 
@@ -69,8 +81,11 @@
 
       @include mq("md") {
         display: inline-block;
-        width: 80%;
+        max-width: calc(100% - 10rem);
         font-size: var(--fs-size-lg);
+      }
+      @include mq("768px") {
+        font-size: var(--fs-size-xl);
       }
     }
   }

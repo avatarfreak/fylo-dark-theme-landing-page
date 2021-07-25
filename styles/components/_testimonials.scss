@@ -10,9 +10,12 @@
   margin: var(--mt-margin-top) var(--s-space-4);
 
   @include mq("sm") {
-    margin: var(--mt-margin-top) var(--s-space-5);
+    margin: var(--mt-margin-top) var(--s-space-7);
   }
 
+  @include mq("768px") {
+    margin: var(--mt-margin-top) var(--s-space-10);
+  }
   &::before {
     content: "";
     position: absolute;

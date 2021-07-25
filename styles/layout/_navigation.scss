@@ -14,6 +14,9 @@
     padding: var(--s-space-4);
   }
 
+  @include mq("768px") {
+    padding: var(--s-space-7);
+  }
   &__logo {
     width: 6rem;
     display: inline-block;

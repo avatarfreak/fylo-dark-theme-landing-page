@@ -13,6 +13,9 @@
     @include mq("sm") {
       margin: var(--s-space-8) var(--s-space-4);
     }
+    @include mq("768px") {
+      margin: var(--s-space-8) var(--s-space-7);
+    }
   }
   &__title {
     @include font-type-scale(

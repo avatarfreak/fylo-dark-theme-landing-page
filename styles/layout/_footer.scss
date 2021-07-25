@@ -17,6 +17,10 @@
     @include mq("sm") {
       margin: 0 var(--s-space-4);
     }
+
+    @include mq("768px") {
+      margin: 0 var(--s-space-7);
+    }
   }
 
   &__title {
