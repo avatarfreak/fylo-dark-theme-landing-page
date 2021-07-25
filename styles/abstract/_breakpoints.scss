@@ -1,3 +1,4 @@
+@use "sass:meta";
 @use "sass:map";
 @use "sass:string";
 
@@ -31,8 +32,12 @@ $breakpoints: (
     @media only screen and (max-width: map.get($breakpoints, $viewport )) {
       @content;
     }
-  } @else {
+  } @else if(map-has-key($breakpoints, $viewport)) {
     @media only screen and (min-width: map.get($breakpoints, $viewport )) {
+      @content;
+    }
+  } @else {
+    @media only screen and (min-width: $viewport) {
       @content;
     }
   }
