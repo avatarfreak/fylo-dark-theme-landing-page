@@ -1,4 +1,5 @@
-@use '../abstract/' as *;
+@use '../abstract' as *;
+@use "../function" as *;
 @use '../components/intro';
 @use '../components/features';
 @use '../components/productive';
@@ -6,5 +7,23 @@
 @use '../components/sign-up';
 
 main {
-  background: var(--clr-primary-100);
+  --clr-first-length: 160px;
+  --clr-second-length: 0.5px;
+
+  @include mq("sm") {
+    --clr-first-length: 200px;
+  }
+
+  @include mq("md") {
+    --clr-first-length: 500px;
+  }
+
+  @include mq("1024px") {
+    --clr-first-length: 25%;
+  }
+  background: linear-gradient(
+    to bottom,
+    transparent var(--clr-first-length),
+    var(--clr-primary-100) var(--clr-second-length)
+  );
 }
