@@ -1,3 +1,4 @@
+@use "sass:math";
 @use "../abstract" as *;
 @use "../function" as *;
 
@@ -16,6 +17,20 @@
   @include mq("768px") {
     margin: var(--mt-margin-top) var(--s-space-10);
   }
+
+  @include mq("2xl") {
+    margin-top: to-rem(120px);
+    margin-left: to-rem(120px);
+    margin-top: to-rem(120px);
+  }
+
+  &__wrapper {
+    @include mq("lg") {
+      // margin: var(--s-space-9) to-rem(math.div(360, 2));
+      @include grid-column(3);
+      gap: var(--s-space-5);
+    }
+  }
   &::before {
     content: "";
     position: absolute;
@@ -27,6 +42,14 @@
     background-size: var(--s-space-3);
     height: var(--s-space-3);
     width: var(--s-space-3);
+
+    @include mq("lg") {
+      margin-top: var(--fs-size-md);
+      background-size: var(--s-space-6);
+      height: var(--s-space-6);
+      width: var(--s-space-6);
+      margin-left: calc(var(--s-space-1) * -1);
+    }
   }
 
   &__figure {
@@ -35,6 +58,7 @@
     margin: var(--s-space-5) 0;
     text-align: left;
     padding: var(--s-space-3);
+    @include drop-shadow();
   }
 
   &__text {
@@ -50,6 +74,14 @@
     @include mq("md") {
       font-size: var(--fs-size-sm);
     }
+
+    @include mq("2xl") {
+      font-size: var(--fs-size-xs);
+    }
+
+    @include mq("3xl") {
+      font-size: var(--fs-size-sm);
+    }
   }
 
   &__details {
@@ -61,6 +93,11 @@
     border-radius: 50%;
     width: to-rem(50px);
     height: to-rem(50px);
+
+    @include mq("3xl") {
+      width: to-rem(60px);
+      height: to-rem(60px);
+    }
   }
   & figcaption {
     margin-left: var(--s-space-2);
@@ -78,6 +115,14 @@
     @include mq("md") {
       font-size: var(--fs-size-sm);
     }
+
+    @include mq("2xl") {
+      font-size: var(--fs-size-2xs);
+    }
+
+    @include mq("3xl") {
+      font-size: var(--fs-size-sm);
+    }
   }
   &__company {
     @include font-type-scale(
@@ -87,6 +132,13 @@
       1px
     );
     @include mq("md") {
+      font-size: var(--fs-size-xs);
+    }
+    @include mq("2xl") {
+      font-size: var(--fs-size-3xs);
+    }
+
+    @include mq("3xl") {
       font-size: var(--fs-size-xs);
     }
   }

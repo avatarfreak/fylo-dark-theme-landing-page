@@ -1,13 +1,21 @@
+@use "sass:math";
+@use "../function" as *;
 @use "../abstract" as *;
 
 /**------------SIGN UP--------------------*/
 .cta {
   background-image: linear-gradient(180deg, var(--clr-primary-100) 45%, var(--clr-primary-120) 45%);
+
+  ::placeholder {
+    opacity: 0.5;
+  }
+
   &__wrapper {
     margin: 0 var(--s-space-3);
     background: var(--clr-primary-110);
     padding: var(--s-space-3);
     border-radius: var(--s-space-2);
+    @include drop-shadow();
 
     @include mq("sm") {
       margin: 0 var(--s-space-4);
@@ -15,6 +23,16 @@
 
     @include mq("768px") {
       margin: 0 var(--s-space-7);
+    }
+
+    @include mq("lg") {
+      margin: 0 to-rem(math.div(360, 2));
+    }
+
+    @include mq("2xl") {
+      margin-top: to-rem(120px);
+      margin-left: clamp(17.5rem, 25vw, 30rem);
+      margin-right: clamp(17.5rem, 25vw, 30rem);
     }
   }
 
@@ -31,6 +49,14 @@
     }
 
     @include mq("768px") {
+      font-size: var(--fs-size-3xl);
+    }
+
+    @include mq("2xl") {
+      font-size: to-rem(32px);
+    }
+
+    @include mq("2xl") {
       font-size: var(--fs-size-3xl);
     }
   }
@@ -51,9 +77,31 @@
     @include mq("768px") {
       padding: var(--s-space-4) 0;
     }
+
+    @include mq("lg") {
+      font-size: var(--fs-size-sm);
+    }
+
+    @include mq("2xl") {
+      margin: var(--s-space-0) to-rem(120px);
+      font-size: var(--fs-size-xs);
+    }
+
+    @include mq("3xl") {
+      font-size: var(--fs-size-sm);
+    }
   }
 
   &__form {
+    @include mq("2xl") {
+      display: grid;
+      grid-template-columns: var(--s-space-5) repeat(3, 1fr) var(--s-space-4);
+      justify-content: space-between;
+      align-items: center;
+      column-gap: var(--s-space-5);
+      position: relative;
+    }
+
     &__email {
       border-radius: var(--s-space-4);
       padding: var(--s-space-2);
@@ -64,6 +112,11 @@
         text-indent: 2rem;
         max-width: calc(100% - 10rem);
       }
+
+      @include mq("2xl") {
+        max-width: 100%;
+        @include col-span(2, 2);
+      }
     }
 
     & .error {
@@ -72,6 +125,14 @@
 
       @include mq("md") {
         font-size: var(--fs-size-md);
+      }
+
+      @include mq("2xl") {
+        font-size: var(--fs-size-md);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin-left: to-rem(160px);
       }
     }
 
@@ -86,6 +147,20 @@
       }
       @include mq("768px") {
         font-size: var(--fs-size-xl);
+      }
+
+      @include mq("lg") {
+        font-size: var(--fs-size-lg);
+      }
+
+      @include mq("2xl") {
+        @include col-span(4, 1);
+        @include row-span(1, 1);
+        max-width: 100%;
+        font-size: var(--fs-size-xs);
+      }
+      @include mq("2xl") {
+        font-size: var(--fs-size-sm);
       }
     }
   }
