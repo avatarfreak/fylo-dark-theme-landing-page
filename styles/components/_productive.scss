@@ -1,9 +1,10 @@
+@use "sass:math";
 @use "../abstract" as *;
+@use "../function" as *;
 
 /*-------------PRODUCTIVE SECTION --------------*/
 
 .productive {
-  text-align: left;
   img {
     display: inline-block;
   }
@@ -16,7 +17,23 @@
     @include mq("768px") {
       margin: var(--s-space-8) var(--s-space-7);
     }
+
+    @include mq("lg") {
+      @include grid-column(2);
+      gap: var(--s-space-5);
+    }
+
+    @include mq("2xl") {
+      margin-top: to-rem(160px);
+      margin-left: to-rem(120px);
+      margin-right: to-rem(120px);
+    }
   }
+
+  &__right {
+    text-align: left;
+  }
+
   &__title {
     @include font-type-scale(
       var(--fs-size-xl),
@@ -32,6 +49,20 @@
       padding-top: var(--s-space-3);
       font-size: var(--fs-size-2xl);
     }
+
+    @include mq("lg") {
+      text-align: left;
+    }
+
+    @include mq("2xl") {
+      font-size: var(--fs-size-4xl);
+      max-width: to-rem(360px);
+    }
+
+    @include mq("3xl") {
+      font-size: var(--fs-size-5xl);
+      max-width: to-rem(400px);
+    }
   }
 
   &__text {
@@ -40,6 +71,14 @@
 
     @include mq("md") {
       font-size: var(--fs-size-lg);
+    }
+
+    @include mq("2xl") {
+      font-size: var(--fs-size-sm);
+    }
+
+    @include mq("3xl") {
+      font-size: var(--fs-size-md);
     }
   }
   &__btn {

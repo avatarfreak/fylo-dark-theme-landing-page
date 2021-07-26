@@ -26,7 +26,7 @@ a {
 body {
   font-family: var(--ff-family-open);
   font-size: 14px;
-  background: var(--clr-primary-90);
+  background: var(--clr-primary-110);
   color: var(--clr-neutral-100);
   margin: 0 auto;
 }
@@ -36,6 +36,10 @@ body {
   margin: 0 auto;
   text-align: center;
   max-width: 1920px;
+}
+
+:focus-visible {
+  outline: 4px dashed var(--clr-accent-100);
 }
 
 h1,

@@ -17,6 +17,11 @@
   @include mq("768px") {
     padding: var(--s-space-7);
   }
+
+  @include mq("xl") {
+    padding: var(--s-space-5) var(--s-space-10);
+  }
+
   &__logo {
     width: 6rem;
     display: inline-block;
@@ -24,6 +29,14 @@
 
     @include mq("md") {
       width: 8rem;
+    }
+
+    @include mq("lg") {
+      width: 10rem;
+    }
+
+    @include mq("xl") {
+      width: unset;
     }
   }
 
@@ -115,6 +128,7 @@
         height: auto;
         justify-content: flex-end;
         padding: 0;
+        z-index: 0;
       }
     }
     &__item {
@@ -124,10 +138,27 @@
         padding: 0;
         margin-left: var(--s-space-3);
       }
+
+      @include mq("2xl") {
+        margin-left: var(--s-space-5);
+      }
     }
+
     &__link {
-      @include font-type-scale(20px, var(--ff-family-raleway), var(--fw-weight-normal));
+      @include font-type-scale(
+        var(--fs-size-lg),
+        var(--ff-family-raleway),
+        var(--fw-weight-normal)
+      );
       @include underline-transition(var(--clr-accent-110));
+
+      @include mq("2xl") {
+        font-size: var(--fs-size-sm);
+      }
+
+      @include mq("3xl") {
+        font-size: var(--fs-size-md);
+      }
     }
   }
 }

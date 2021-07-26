@@ -1,8 +1,10 @@
 @use "../abstract" as *;
+@use "../function" as *;
 
 /*---------- Features ----------*/
 
 .features {
+  position: relative;
   img {
     display: inline-block;
   }
@@ -17,10 +19,34 @@
     @include mq("768px") {
       margin: var(--s-space-7);
     }
+
+    @include mq("lg") {
+      margin-top: to-rem(160px);
+      @include grid-column(2);
+      gap: var(--s-space-5);
+    }
+
+    @include mq("2xl") {
+      column-gap: to-rem(120px);
+    }
+
+    @include mq("2xl") {
+      margin-left: clamp(17.5rem, 15vw, 30rem);
+      margin-right: clamp(17.5rem, 15vw, 30rem);
+    }
   }
 
   &-card {
     padding: var(--s-space-6) 0;
+
+    @include mq("lg") {
+      @include grid();
+      align-self: baseline;
+    }
+
+    @include mq("2xl") {
+      padding-top: var(--s-space-2);
+    }
     &__img {
       padding-bottom: var(--s-space-2);
     }
@@ -40,6 +66,18 @@
       @include mq("768px") {
         font-size: var(--fs-size-2xl);
       }
+
+      @include mq("lg") {
+        font-size: var(--fs-size-xl);
+      }
+
+      @include mq("2xl") {
+        font-size: var(--fs-size-lg);
+      }
+
+      @include mq("2xl") {
+        font-size: var(--fs-size-xl);
+      }
     }
 
     &__text {
@@ -48,6 +86,18 @@
 
       @include mq("md") {
         font-size: var(--fs-size-lg);
+      }
+
+      @include mq("lg") {
+        font-size: var(--fs-size-sm);
+      }
+
+      @include mq("2xl") {
+        font-size: var(--fs-size-xs);
+      }
+
+      @include mq("3xl") {
+        font-size: var(--fs-size-sm);
       }
     }
   }

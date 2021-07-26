@@ -3,9 +3,8 @@
 /* - - - - - - - - footer- - - - - - - - -*/
 
 .footer {
-  --mt-top: 10rem;
   background: var(--clr-primary-120);
-  padding-top: var(--mt-top);
+  padding-top: var(--s-space-10);
 
   img {
     display: inline-block;
@@ -21,6 +20,12 @@
     @include mq("768px") {
       margin: 0 var(--s-space-7);
     }
+
+    @include mq("2xl") {
+      margin-top: var(--s-space-5);
+      margin-left: to-rem(120px);
+      margin-right: to-rem(120px);
+    }
   }
 
   &__title {
@@ -34,6 +39,30 @@
   &__body {
     text-align: left;
     padding: var(--s-space-4) 0;
+
+    @include mq("lg") {
+      padding: var(--s-space-4) 0;
+
+      @include grid {
+        grid-template-columns: repeat(5, minmax(max-content, 1fr));
+        align-items: baseline;
+
+        & > * {
+          justify-self: end;
+        }
+
+        gap: 1rem;
+      }
+
+      @include mq("2xl") {
+        grid-template-columns: to-rem(360px) repeat(4, minmax(max-content, 1fr));
+      }
+    }
+
+    @include mq("2xl") {
+      padding-top: var(--s-space-5);
+      padding-bottom: var(--s-space-10);
+    }
   }
 
   &__location {
@@ -51,6 +80,14 @@
       font-size: var(--fs-size-lg);
     }
 
+    @include mq("lg") {
+      font-size: var(--fs-size-sm);
+      grid-column: 1 / span 2;
+    }
+
+    @include mq("2xl") {
+      grid-column: 1 / span 1;
+    }
     & img {
       margin-top: calc(var(--s-space-1) / 2);
 
@@ -66,6 +103,11 @@
   &__address {
     font-style: normal;
     padding: var(--s-space-2) 0;
+
+    @include mq("lg") {
+      padding-top: var(--s-space-0);
+    }
+
     & > * + * {
       display: flex;
       align-items: center;
@@ -77,15 +119,26 @@
       @include mq("md") {
         font-size: var(--fs-size-md);
       }
+
+      @include mq("lg") {
+        font-size: var(--fs-size-sm);
+      }
+
+      @include mq("2xl") {
+        font-size: var(--fs-size-xs);
+      }
     }
   }
 
-  &__secondary-nav,
-  &__information {
+  %details {
     margin-top: var(--s-space-3);
 
     @include mq("md") {
       margin-top: var(--s-space-4);
+    }
+
+    @include mq("lg") {
+      margin-top: var(--s-space-0);
     }
 
     li {
@@ -101,8 +154,35 @@
       @include mq("md") {
         font-size: var(--fs-size-lg);
       }
+
+      @include mq("lg") {
+        font-size: var(--fs-size-sm);
+        padding-top: var(--s-space-0);
+      }
     }
   }
+
+  &__secondary-nav {
+    @extend %details;
+    @include row-span(1, 1);
+    @include col-span(4, 1);
+
+    @include mq("2xl") {
+      @include col-span(3, 1);
+    }
+  }
+
+  &__information {
+    @extend %details;
+    @include row-span(1, 1);
+    @include col-span(5, 1);
+
+    @include mq("2xl") {
+      @include row-span(1, 1);
+      @include col-span(4, 1);
+    }
+  }
+
   & .icon {
     fill: var(--clr-neutral-100);
     width: var(--fs-size-xl);
@@ -116,6 +196,18 @@
     margin-top: var(--s-space-10);
     margin-bottom: var(--s-space-4);
     gap: var(--s-space-2);
+
+    @include mq("lg") {
+      margin-top: var(--s-space-0);
+      @include row-span(2, 1);
+      @include col-span(1, 3);
+      grid-auto-flow: column;
+    }
+    @include mq("2xl") {
+      @include row-span(1, 1);
+      @include col-span(5, 1);
+      align-self: flex-start;
+    }
   }
 
   &__social__link {
