@@ -1,31 +1,11 @@
 @use "../abstract" as *;
+@use "../function" as *;
+@use "sass:math";
 
 /* ------------------INTRO SECTION --------------*/
 
 .intro {
-  --first-length: 44%;
-  --second-length: 48%;
-
-  @include mq("sm") {
-    --first-length: 50%;
-    --second-length: 58%;
-  }
-
-  @include mq("md") {
-    --first-length: 60%;
-    --second-length: 80%;
-  }
-  @include mq(768px) {
-    --first-length: 70%;
-    --second-length: 80%;
-  }
-
   position: relative;
-  background-image: linear-gradient(
-    180deg,
-    var(--clr-primary-90) var(--first-length),
-    var(--clr-primary-100) var(--second-length)
-  );
 
   &__wrapper {
     position: relative;
@@ -38,6 +18,18 @@
 
     @include mq(768px) {
       margin: var(--s-space-7);
+    }
+
+    @include mq("lg") {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: var(--s-space-9) to-rem(math.div(360, 2));
+    }
+
+    @include mq("2xl") {
+      margin: var(--s-space-9) to-rem(360px);
     }
 
     & img {
@@ -62,6 +54,18 @@
     @include mq(768px) {
       font-size: var(--fs-size-3xl);
     }
+
+    @include mq("lg") {
+      max-width: to-rem(40 * 18);
+    }
+
+    @include mq("2xl") {
+      font-size: var(--fs-size-4xl);
+    }
+
+    @include mq("3xl") {
+      font-size: var(--fs-size-5xl);
+    }
   }
 
   &__text {
@@ -70,6 +74,10 @@
 
     @include mq("md") {
       font-size: var(--fs-size-lg);
+    }
+
+    @include mq("2xl") {
+      max-width: to-rem(40 * 18);
     }
   }
 
@@ -88,6 +96,13 @@
         font-size: var(--fs-size-xl);
       }
     }
+
+    @include mq("2xl") {
+      max-width: to-rem(280px);
+      a {
+        font-size: var(--fs-size-md);
+      }
+    }
   }
 
   --mt-margin-top: 10rem;
@@ -97,13 +112,24 @@
   }
 
   @include mq("md") {
-    --mt-margin-top: 20rem;
+    --mt-margin-top: 22rem;
   }
 
-  @include mq(768px) {
-    --mt-margin-top: 25rem;
+  @include mq("768px") {
+    --mt-margin-top: 26rem;
   }
 
+  @include mq("lg") {
+    --mt-margin-top: 27rem;
+  }
+
+  @include mq("1024px") {
+    --mt-margin-top: 35rem;
+  }
+
+  @include mq("2xl") {
+    --mt-margin-top: 39rem;
+  }
   &::after {
     content: "";
     position: absolute;
@@ -111,8 +137,13 @@
     left: 0;
     width: 100%;
     margin-top: var(--mt-margin-top);
-    background-image: url("../images/bg-curvy-mobile.svg");
+    background: var(--clr-primary-110) url("../images/bg-curvy-mobile.svg");
     @include aspect-ratio(375px, 141px);
     @include background-cover();
+
+    @include mq("md") {
+      background-image: url("../images/bg-curvy-desktop.svg");
+      @include aspect-ratio(1440px, 449px);
+    }
   }
 }
