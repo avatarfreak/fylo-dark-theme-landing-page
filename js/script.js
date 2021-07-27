@@ -3,9 +3,27 @@ const menu = document.querySelector(".navbar__nav__list");
 const menuToggleBtn = document.querySelector(".navbar__menu-burger");
 
 //Toggle navigation.i
-menuBtn.addEventListener("click", () => {
+menuBtn.addEventListener("click", function () {
   menu.classList.toggle("active");
   menuToggleBtn.classList.toggle("active");
+
+  //accessibility
+  if (menu.classList.contains("active")) {
+    menuBtn.setAttribute("aria-expanded", "true");
+    menuBtn.setAttribute("aria-label", "close menu");
+  } else {
+    menuBtn.setAttribute("aria-expanded", "false");
+    menuBtn.setAttribute("aria-label", "show menu");
+  }
+});
+
+//All-links
+const links = [...menu.querySelectorAll(".navbar__nav__link")];
+//when reached last item in a list
+//Add blur to move back focus to toggle button;
+const lastChild = links.pop();
+lastChild.addEventListener("blur", () => {
+  menuBtn.focus();
 });
 
 //Email validation
