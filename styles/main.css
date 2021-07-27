@@ -1264,7 +1264,10 @@ main {
   justify-content: center;
   margin-top: var(--s-space-10);
   margin-bottom: var(--s-space-4);
-  gap: var(--s-space-2);
+  margin-right: var(--s-space-2);
+}
+.footer__social__list__social__item:not(:last-child) {
+  margin-right: 1rem;
 }
 @media only screen and (min-width: 960px) {
   .footer__social__list {

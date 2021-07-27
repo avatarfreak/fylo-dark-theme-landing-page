@@ -195,8 +195,11 @@
     justify-content: center;
     margin-top: var(--s-space-10);
     margin-bottom: var(--s-space-4);
-    gap: var(--s-space-2);
+    margin-right: var(--s-space-2);
 
+    &__social__item:not(:last-child) {
+      margin-right: 1rem;
+    }
     @include mq("lg") {
       margin-top: var(--s-space-0);
       @include row-span(2, 1);
