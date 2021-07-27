@@ -197,9 +197,6 @@
     margin-bottom: var(--s-space-4);
     margin-right: var(--s-space-2);
 
-    &__social__item:not(:last-child) {
-      margin-right: 1rem;
-    }
     @include mq("lg") {
       margin-top: var(--s-space-0);
       @include row-span(2, 1);
@@ -213,6 +210,10 @@
     }
   }
 
+  &__social__item:not(:last-child) {
+    background: blue;
+    margin-right: 1rem;
+  }
   &__social__link {
     display: flex;
     align-items: center;
