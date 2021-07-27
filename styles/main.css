@@ -1266,9 +1266,6 @@ main {
   margin-bottom: var(--s-space-4);
   margin-right: var(--s-space-2);
 }
-.footer__social__list__social__item:not(:last-child) {
-  margin-right: 1rem;
-}
 @media only screen and (min-width: 960px) {
   .footer__social__list {
     margin-top: var(--s-space-0);
@@ -1287,6 +1284,10 @@ main {
     grid-column: 5/span 1;
     align-self: flex-start;
   }
+}
+.footer__social__item:not(:last-child) {
+  background: blue;
+  margin-right: 1rem;
 }
 .footer__social__link {
   display: flex;
