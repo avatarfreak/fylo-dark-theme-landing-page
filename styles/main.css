@@ -1286,7 +1286,6 @@ main {
   }
 }
 .footer__social__item:not(:last-child) {
-  background: blue;
   margin-right: 1rem;
 }
 .footer__social__link {
